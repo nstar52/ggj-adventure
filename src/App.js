@@ -1,6 +1,5 @@
-import Button from "./components/Button/Button";
-import { GlobalStyle} from "./App.styles";
-
+import { GlobalStyle} from "./globalStyle";
+import HomePage from "./pages/Home_page";
 
 
 
@@ -8,9 +7,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>Game Title</h1>
-      <Button text='New game' />
-      <Button text='About'/>
+      <HomePage />
     </>
   );
 }
