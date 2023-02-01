@@ -1,5 +1,5 @@
 import { PageStyle, Container, DialogContainer, ButtonGrid, OptionButton } from "../styles/Player_UI.style";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const PlayerUI = () => {
