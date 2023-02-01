@@ -3,12 +3,13 @@ import { StyledButton, Centered } from "./Button.styles";
 
 
 
+
 const Button = (props) => {
-    const {text} = props;
+
     return (
         <>
             <Centered>
-                <StyledButton>{text}</StyledButton>
+                <StyledButton onClick={props.onClick}>{props.text}</StyledButton>
             </Centered>
         </>
     )

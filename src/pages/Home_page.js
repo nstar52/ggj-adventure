@@ -11,9 +11,9 @@ const HomePage = () => {
         <PageStyle>
             <div>
             <h1>Game Title</h1>
-            <Button text='New game' />
-            <Button text='About'/>
             <Popup />
+            <Button text='About'/>
+            
             </div>
         </PageStyle>
     )

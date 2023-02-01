@@ -1,6 +1,8 @@
 import React from "react";
 import Modal from "react-modal";
 import { customStyles, Title, CloseButton } from "./PopupModal.style";
+import Button from "../Button/Button";
+import DropDownList from "../DropDownList/DropDownList";
 
 Modal.setAppElement('#root');
 
@@ -17,7 +19,7 @@ const PopupModal = () => {
 
     return (
         <>
-            <h1 onClick={openModal}>POPUP MODAL</h1>
+            <Button onClick={openModal} text='New Game'/>
 
             <Modal
                 isOpen={modalIsOpen}
@@ -28,6 +30,7 @@ const PopupModal = () => {
             >
             <CloseButton size={18} onClick={closeModal} />
             <Title>Select your Character</Title>
+            <DropDownList />
             </Modal>
         </>
     )
