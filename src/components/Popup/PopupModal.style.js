@@ -20,9 +20,8 @@ color: #313131;
 opacity: 0.53;
 `
 
-export const Title = styled.h1`
-font-size: 21px;
-color: #313131;
-font-weight: 700;
-padding-bottom: 10px;
+export const RowStyle = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 `
