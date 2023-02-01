@@ -26,7 +26,6 @@ const PopupModal = () => {
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
-                // ariaHideApp={false}
             >
             <CloseButton size={18} onClick={closeModal} />
             <Title>Select your Character</Title>
