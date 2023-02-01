@@ -1,6 +1,7 @@
-import { PageStyle, Container, DialogContainer, ButtonGrid, OptionButton } from "../styles/Player_UI.style";
+import { PageStyle, Container, DialogContainer, ButtonGrid, OptionButton, Sidebar, Title, Door } from "../styles/Player_UI.style";
 import React, { useEffect, useState } from "react";
-
+import playerAvatar from '../orc-icon-18.png';
+import roomPicture from '../scenery.jpg';
 
 const PlayerUI = () => {
 
@@ -26,6 +27,7 @@ const PlayerUI = () => {
             textNode.options.forEach(option => {
                 if (showOption(option)) {
                     const button = document.createElement('button')
+                    
                     button.innerText = option.text
                     button.classList.add('btn')
                     button.addEventListener('click', () => selectOption(option))
@@ -207,11 +209,28 @@ const PlayerUI = () => {
 
     return (
         <PageStyle>
-            <Container>
+
+            <Title>Awesome Game</Title>
+
+            <Container> 
                 <div>
-                <h1>Scene Picture</h1>
-                </div>
+                    <img src={roomPicture} alt="scenery"/> 
+                </div>               
+                                   
             </Container>
+
+            <Sidebar>
+                <div>
+                    <img src={playerAvatar} width="200" height="200" alt="avatar"/>
+                </div>
+                <div>
+                    <Door size={100} />
+                </div>
+            </Sidebar>
+
+            
+
+            
 
             <DialogContainer>
                 <div id="text">Text</div>
