@@ -7,4 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: sans-serif;
     font-size: 15px;
 }
+
+body{
+    width:100%;
+    height:100%;
+}
 `

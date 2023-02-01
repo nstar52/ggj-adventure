@@ -4,11 +4,18 @@ import { customStyles, CloseButton, RowStyle } from "./PopupModal.style";
 import Button from "../Button/Button";
 import DropDownList from "../DropDownList/DropDownList";
 import Title from "../Title/Title";
+import { useNavigate } from "react-router-dom";
 
 Modal.setAppElement('#root');
 
 const PopupModal = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    let navigate = useNavigate(); 
+    
+    const routeChange = () =>{ 
+        let path = `/story`;
+        navigate(path);
+    }
 
     function openModal() {
         setIsOpen(true);
@@ -52,6 +59,10 @@ const PopupModal = () => {
                 <RowStyle>
                     <Title text='option 4' />
                     <DropDownList />
+                </RowStyle>
+
+                <RowStyle>
+                    <button onClick={routeChange}>Start</button>
                 </RowStyle>
             </Modal>
         </>
