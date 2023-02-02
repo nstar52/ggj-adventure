@@ -1,9 +1,25 @@
 import { PageStyle, Container, DialogContainer, ButtonGrid, OptionButton, Sidebar, Title, Door } from "../styles/Player_UI.style";
 import React, { useEffect, useState } from "react";
-import playerAvatar from '../orc-icon-18.png';
 import roomPicture from '../scenery.jpg';
+import { useNavigate } from "react-router-dom";
+import {useLocation} from 'react-router-dom';
 
 const PlayerUI = () => {
+
+    const location = useLocation();
+
+    const player_name = location.state.name;
+       
+    let navigate = useNavigate();
+    const routeChange = () =>{ 
+        let path = `/`;
+        navigate(path);
+    }
+
+    const endGame = () =>{ 
+        let path = `/end`;
+        navigate(path);
+    }
 
     useEffect(() => {
         const textElement = document.getElementById('text')
@@ -43,8 +59,9 @@ const PlayerUI = () => {
         function selectOption(option) {
             const nextTextNodeId = option.nextText
             if (nextTextNodeId <= 0) {
-                return startGame()
+                return endGame()
             }
+            
             state = Object.assign(state, option.setState)
             showTextNode(nextTextNodeId)
         }
@@ -111,7 +128,7 @@ const PlayerUI = () => {
                 text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
                 options: [
                     {
-                        text: 'Restart',
+                        text: 'End game',
                         nextText: -1
                     }
                 ]
@@ -121,7 +138,7 @@ const PlayerUI = () => {
                 text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
                 options: [
                     {
-                        text: 'Restart',
+                        text: 'End game',
                         nextText: -1
                     }
                 ]
@@ -166,7 +183,7 @@ const PlayerUI = () => {
                 text: 'Your attempts to run are in vain and the monster easily catches.',
                 options: [
                     {
-                        text: 'Restart',
+                        text: 'End game',
                         nextText: -1
                     }
                 ]
@@ -176,7 +193,7 @@ const PlayerUI = () => {
                 text: 'You foolishly thought this monster could be slain with a single sword.',
                 options: [
                     {
-                        text: 'Restart',
+                        text: 'End game',
                         nextText: -1
                     }
                 ]
@@ -186,7 +203,7 @@ const PlayerUI = () => {
                 text: 'The monster laughed as you hid behind your shield and ate you.',
                 options: [
                     {
-                        text: 'Restart',
+                        text: 'End game',
                         nextText: -1
                     }
                 ]
@@ -210,7 +227,10 @@ const PlayerUI = () => {
     return (
         <PageStyle>
 
-            <Title>Awesome Game</Title>
+            <Title>
+                <h1>Awesome Game: </h1>
+                <h2>Have fun {player_name}!</h2>
+            </Title>
 
             <Container> 
                 <div>
@@ -221,10 +241,10 @@ const PlayerUI = () => {
 
             <Sidebar>
                 <div>
-                    <img src={playerAvatar} width="200" height="200" alt="avatar"/>
+                    <img src={`${process.env.PUBLIC_URL}/${location.state.avatar}.png`} width="200" height="200" alt="avatar"/>
                 </div>
                 <div>
-                    <Door size={100} />
+                    <Door size={100} onClick={routeChange}/>
                 </div>
             </Sidebar>
 

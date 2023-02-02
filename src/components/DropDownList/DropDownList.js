@@ -1,19 +1,28 @@
 import React from "react";
 import { Select } from "./DropDownList.style";
 
-
-const DropDownList = (props) => {
-
-    return (
+const Dropdown = ({ value, options, onChange }) => {
+    
+    return (            
+          
         <>
-            <Select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </Select>
-        </>
-    )
-}
+            <Select value={value} onChange={onChange}>
 
-export default DropDownList;
+                {options.map((option) => (
+
+                    <option value={option.value}>{option.label}</option>
+
+                ))}
+
+            </Select>
+
+            <p> You selected {value}</p>
+            
+            
+        </>
+   
+    );
+   
+   };
+   
+   export default Dropdown;

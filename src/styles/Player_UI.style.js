@@ -46,6 +46,8 @@ grid-template-columns: repeat(1, auto);
 export const Door = styled(GiExitDoor)`
 color: green;
 padding-left: 50px;
+cursor: pointer;
+
 `
 
 export const DialogContainer = styled.div`
