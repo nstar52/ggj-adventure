@@ -3,7 +3,6 @@ import { StyledButton, Centered } from "./Button.styles";
 
 
 
-
 const Button = (props) => {
 
     return (

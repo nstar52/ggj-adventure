@@ -12,11 +12,11 @@ background-color: red;
 width: 75%;
 
 
-
 div {
     padding: 240px 540px;
 }
 `
+
 
 export const DialogContainer = styled.div`
 width: 800px;
