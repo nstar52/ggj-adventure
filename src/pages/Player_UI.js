@@ -9,7 +9,7 @@ import {
   Door,
 } from "../styles/Player_UI.style";
 import React, { useState } from "react";
-import roomPicture from "../scenery.jpg";
+// import roomPicture from "../scenery.jpg";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -39,6 +39,15 @@ const PlayerUI = (props) => {
     );
   };
 
+//   <img
+//   src={`${process.env.PUBLIC_URL}/${location.state.avatar}.png`}
+//   width="200"
+//   height="200"
+//   alt="avatar"
+// />
+
+{/* <img src={roomPicture} alt="scenery" /> */}
+
   return (
     <PageStyle>
       <Title>
@@ -48,18 +57,13 @@ const PlayerUI = (props) => {
 
       <Container>
         <div>
-          <img src={roomPicture} alt="scenery" />
+          
         </div>
       </Container>
 
       <Sidebar>
         <div>
-          <img
-            src={`${process.env.PUBLIC_URL}/${location.state.avatar}.png`}
-            width="200"
-            height="200"
-            alt="avatar"
-          />
+        
         </div>
         <div>
           <Door size={100} onClick={routeChange} />

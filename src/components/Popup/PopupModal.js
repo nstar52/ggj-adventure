@@ -10,7 +10,7 @@ Modal.setAppElement('#root');
 
 const PopupModal = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [playerName, setPlayerName] = useState()
+    const [playerName, setPlayerName] = useState("playename")
     let navigate = useNavigate(); 
     
     const routeChange = () =>{ 
@@ -18,9 +18,9 @@ const PopupModal = () => {
         navigate(path, {state: {name: playerName, avatar: character}});
     }
     const options = [
-        { label: 'White Bunny', value: 'White Bunny' },     
-        { label: 'Brown Hare', value: 'Brown Hare' },     
-        { label: 'Gray Rabbit', value: 'Gray Rabbit' },     
+        { id:1, label: 'White Bunny', value: 'White Bunny' },     
+        { id:2, label: 'Brown Hare', value: 'Brown Hare' },     
+        { id:3, label: 'Gray Rabbit', value: 'Gray Rabbit' },     
     ];
 
     const [value, setValue] = React.useState('White Bunny');
@@ -37,7 +37,7 @@ const PopupModal = () => {
 
     function closeModal() { 
         setIsOpen(false)
-    }    
+    }
       
    
     return (
@@ -60,13 +60,13 @@ const PopupModal = () => {
                 <Character>
                     <RowStyle>
                         <Title text='Enter your name' />
-                        <input>{setPlayerName}</input>
+                        <input onChange={(e) => setPlayerName(e.target.value)} value={playerName} />
                     </RowStyle> 
                     <RowStyle>                        
                         <Title text='Pick a character' />
                         <DropDown options={options} value={value} onChange={handleChange}/>
                         <Avatar>                            
-                            <img src={`${process.env.PUBLIC_URL}/${character}.png`} width="120" height="120" alt="avatar"></img>
+                            {/* <img src={`${process.env.PUBLIC_URL}/${character}.png`} width="120" height="120" alt="avatar"></img> */}
                         </Avatar>
                     </RowStyle>                                   
                 </Character>

@@ -2,20 +2,15 @@ import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai"
 import Background from '../../assets/background.jpg'
 
-export const customStyles = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 0.4rem;
-width: 450px;
-padding: 1.3rem;
-position: absolute;
-top: 20%;
-background-image: url(${Background});
-background: black;
-border: 1px solid #ddd;
-border-radius: 15px;
-`
+
+export const customStyles = {
+  
+
+  content: {
+    backgroundImage: `url(${Background})`,
+    borderRadius: '15px'
+  }
+}
 
 export const ModalTop = styled.div`
 display: flex;
