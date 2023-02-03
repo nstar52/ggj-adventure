@@ -2,27 +2,19 @@ import React from "react";
 import { Select } from "./DropDownList.style";
 
 const Dropdown = ({ value, options, onChange }) => {
-    
-    return (            
-          
-        <>
-            <Select value={value} onChange={onChange}>
+  return (
+    <>
+      <Select value={value} onChange={onChange}>
+        {options.map((option) => (
+          <option key={option.id} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </Select>
 
-                {options.map((option) => (
+      <p> You selected {value}</p>
+    </>
+  );
+};
 
-                    <option key={option.id} value={option.value}>{option.label}</option>
-
-                ))}
-
-            </Select>
-
-            <p> You selected {value}</p>
-            
-            
-        </>
-   
-    );
-   
-   };
-   
-   export default Dropdown;
+export default Dropdown;

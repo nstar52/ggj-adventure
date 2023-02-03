@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai"
 import Background from '../../assets/background.jpg'
-
+// import BrownHare from '../../assets/BrownHare'
+// import GrayRabbit from '../../assets/GrayRabbit'
+// import WhiteBunny from '../../assets/WhiteBunny'
 
 export const customStyles = {
   
@@ -27,9 +29,13 @@ grid-template-columns: 1fr 1fr;
 padding: 2rem 1.5rem 0.5rem 2rem;
 `
 
-export const Avatar = styled.div`
+export const AvatarContainer = styled.div`
 display: inline-block;
 text-align: center;
+`
+export const Avatar = styled.img`
+width: 120px;
+height: 120px;
 `
 
 export const CloseButton = styled(AiOutlineClose)`

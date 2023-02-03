@@ -1,82 +1,101 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { customStyles, CloseButton, RowStyle, Avatar, Character, ModalTop, ModalBottom } from "./PopupModal.style";
+import {
+  customStyles,
+  CloseButton,
+  RowStyle,
+  Avatar,
+  Character,
+  ModalTop,
+  ModalBottom,
+  AvatarContainer,
+} from "./PopupModal.style";
 import Button from "../Button/Button";
 import Title from "../Title/Title";
 import { useNavigate } from "react-router-dom";
 import DropDown from "../DropDownList/DropDownList";
+import BrownHare from "../../assets/BrownHare.png";
+import GrayRabbit from "../../assets/GrayRabbit.png";
+import WhiteBunny from "../../assets/WhiteBunny.png";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 const PopupModal = () => {
-    const [modalIsOpen, setIsOpen] = useState(false);
-    const [playerName, setPlayerName] = useState("playename")
-    let navigate = useNavigate(); 
-    
-    const routeChange = () =>{ 
-        let path = '/story';
-        navigate(path, {state: {name: playerName, avatar: character}});
-    }
-    const options = [
-        { id:1, label: 'White Bunny', value: 'White Bunny' },     
-        { id:2, label: 'Brown Hare', value: 'Brown Hare' },     
-        { id:3, label: 'Gray Rabbit', value: 'Gray Rabbit' },     
-    ];
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [playerName, setPlayerName] = useState("playename");
+  let navigate = useNavigate();
 
-    const [value, setValue] = React.useState('White Bunny');
+  const routeChange = () => {
+    let path = "/story";
+    navigate(path, { state: { name: playerName, avatar: character } });
+  };
+  const options = [
+    { id: 1, label: "White Bunny", value: "White Bunny" },
+    { id: 2, label: "Brown Hare", value: "Brown Hare" },
+    { id: 3, label: "Gray Rabbit", value: "Gray Rabbit" },
+  ];
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
+  const [value, setValue] = React.useState("White Bunny");
 
-    const character = value.replaceAll(' ', '');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    console.log(event.target.value);
+  };
 
-    function openModal() {
-        setIsOpen(true);
-    }
+  const character = value.replaceAll(" ", "");
 
-    function closeModal() { 
-        setIsOpen(false)
-    }
-      
-   
-    return (
-        <>
-            <Button onClick={openModal} text='New Game'/>
+  function openModal() {
+    setIsOpen(true);
+  }
 
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-            >    
+  function closeModal() {
+    setIsOpen(false);
+  }
 
-                <ModalTop>
-                    <Title text='Welcome !' />
-                    <CloseButton size={20} onClick={closeModal} />
+  return (
+    <>
+      <Button onClick={openModal} text="New Game" />
 
-                </ModalTop>
-                
-                <Character>
-                    <RowStyle>
-                        <Title text='Enter your name' />
-                        <input onChange={(e) => setPlayerName(e.target.value)} value={playerName} />
-                    </RowStyle> 
-                    <RowStyle>                        
-                        <Title text='Pick a character' />
-                        <DropDown options={options} value={value} onChange={handleChange}/>
-                        <Avatar>                            
-                            {/* <img src={`${process.env.PUBLIC_URL}/${character}.png`} width="120" height="120" alt="avatar"></img> */}
-                        </Avatar>
-                    </RowStyle>                                   
-                </Character>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <ModalTop>
+          <Title text="Welcome !" />
+          <CloseButton size={20} onClick={closeModal} />
+        </ModalTop>
 
-                <ModalBottom>
-                    <button onClick={routeChange}> your journey starts here...</button>
-                </ModalBottom>
-            </Modal>
-        </>
-    )
-}
+        <Character>
+          <RowStyle>
+            <Title text="Enter your name" />
+            <input
+              onChange={(e) => setPlayerName(e.target.value)}
+              value={playerName}
+            />
+          </RowStyle>
+          <RowStyle>
+            <Title text="Pick a character" />
+            <DropDown options={options} value={value} onChange={handleChange} />
+            <AvatarContainer>
+              {value === "Gray Rabbit" ? (
+                <Avatar src={GrayRabbit} />
+              ) : value === "Brown Hare" ? (
+                <Avatar src={BrownHare} />
+              ) : (
+                <Avatar src={WhiteBunny} />
+              )}
+            </AvatarContainer>
+          </RowStyle>
+        </Character>
+
+        <ModalBottom>
+          <button onClick={routeChange}> your journey starts here...</button>
+        </ModalBottom>
+      </Modal>
+    </>
+  );
+};
 
 export default PopupModal;
