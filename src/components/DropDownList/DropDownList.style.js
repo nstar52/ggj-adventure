@@ -13,10 +13,4 @@ padding: 0 5px;
 background-color: #ffffff 0% 0% no-repeat padding-box;
 box-sizing: border-box;
 
-option {
-    color: #566a5c;
-    font-weight: 500;
-    opacity: 1;
-    background-color: white;
-}
 `

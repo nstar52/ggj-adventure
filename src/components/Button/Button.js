@@ -8,7 +8,7 @@ const Button = (props) => {
     return (
         <>
             <Centered>
-                <StyledButton onClick={props.onClick}>{props.text}</StyledButton>
+                <StyledButton onClick={props.onClick} style={{background: props.bg_color}}>{props.text}</StyledButton>
             </Centered>
         </>
     )
