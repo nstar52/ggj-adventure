@@ -46,7 +46,7 @@ const PlayerUI = (props) => {
 //   alt="avatar"
 // />
 
-{/* <img src={roomPicture} alt="scenery" /> */}
+/* <img src={roomPicture} alt="scenery" /> */
 
   return (
     <PageStyle>

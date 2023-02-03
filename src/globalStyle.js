@@ -17,8 +17,8 @@ body{
 input{
     border: 2px solid gray;
     border-radius: 4px;
-    width: 100%;
-    height: 100px;    
+    width: 90%;
+    height: 70%;    
     padding-left: 2rem;
     font-size: 30px;
 }

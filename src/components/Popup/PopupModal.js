@@ -66,7 +66,7 @@ const PopupModal = () => {
                         <Title text='Pick a character' />
                         <DropDown options={options} value={value} onChange={handleChange}/>
                         <Avatar>                            
-                            {/* <img src={`${process.env.PUBLIC_URL}/${character}.png`} width="120" height="120" alt="avatar"></img> */}
+                            <img src={`../assets/${character}.png`} width="120" height="120" alt="avatar"></img>
                         </Avatar>
                     </RowStyle>                                   
                 </Character>

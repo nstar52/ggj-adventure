@@ -8,7 +8,14 @@ export const customStyles = {
 
   content: {
     backgroundImage: `url(${Background})`,
-    borderRadius: '15px'
+    borderRadius: '15px',
+    width: '60%',
+    height: '60%',
+    position: 'absolute',
+    top: '20%',
+    left: '20%',
+    right: '20%',
+    bottom: '20%'
   }
 }
 
@@ -16,8 +23,10 @@ export const ModalTop = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
-background-color: #eee;
+background-color: transparent;
 padding: 1rem;
+border-radius: 15px;
+border: 2px solid #8B4513;
 
 `
 
@@ -25,6 +34,11 @@ export const Character = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 padding: 2rem 1.5rem 0.5rem 2rem;
+
+input {
+  background-color: transparent;
+  border-color: #8B4513;
+}
 `
 
 export const Avatar = styled.div`
@@ -64,5 +78,6 @@ left: 2rem;
 button{
   padding: 1rem;
   font-style: italic;
+  border-color: #8B4513;
 }
 `
