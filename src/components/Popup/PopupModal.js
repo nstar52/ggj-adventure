@@ -69,12 +69,16 @@ const PopupModal = () => {
 
         <Character>
           <RowStyle>
-            <Title text="Enter your name" />
+            <div>
+              <Title text="Enter your name" />
+            
             <input
               onChange={(e) => setPlayerName(e.target.value)}
               value={playerName}
             />
+            </div>
           </RowStyle>
+
           <RowStyle>
             <Title text="Pick a character" />
             <DropDown options={options} value={value} onChange={handleChange} />

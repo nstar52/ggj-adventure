@@ -5,6 +5,6 @@ export const Container = styled.div`
     font-size: 21px;
     color: #313131;
     font-weight: 700;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
   }
 `;
