@@ -35,6 +35,10 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 padding: 2rem 1.5rem 0.5rem 2rem;
 
+>div {
+  margin-bottom: 0;
+}
+
 input {
   background-color: transparent;
   border-color: #8B4513;
