@@ -14,7 +14,7 @@ export const customStyles = {
     left: "20%",
     right: "20%",
     bottom: "20%",
-  },
+  }
 };
 
 export const ModalTop = styled.div`
@@ -25,6 +25,7 @@ export const ModalTop = styled.div`
   padding: 1rem;
   border-radius: 15px;
   border: 2px solid #8b4513;
+  max-height: 30%;
 `;
 
 export const CloseButton = styled(AiOutlineClose)`

@@ -39,13 +39,20 @@ grid-area: sidebar;
 outline: 1px dashed white;
 box-sizing: border-box;
 display: grid;
-grid-template-columns: repeat(1, auto);
-
+grid-template-columns: .7fr;
+align-items: center;
 `
+
+export const Avatar = styled.img`
+  width: 120px;
+  height: 120px;
+  padding-left: 45%;
+
+`;
 
 export const Door = styled(GiExitDoor)`
 color: green;
-padding-left: 50px;
+padding-left: 50%;
 cursor: pointer;
 
 `

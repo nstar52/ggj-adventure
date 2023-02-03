@@ -14,7 +14,7 @@ import GrayRabbit from "../assets/GrayRabbit.png";
 import WhiteBunny from "../assets/WhiteBunny.png";
 
 const HomePage = () => {
-  const [playerName, setPlayerName] = useState("playename");
+  const [playerName, setPlayerName] = useState("player name");
   const [value, setValue] = useState("White Bunny");
   let navigate = useNavigate();
 
@@ -22,6 +22,7 @@ const HomePage = () => {
     let path = "/story";
     navigate(path, { state: { name: playerName, avatar: value } });
   };
+
   const options = [
     { id: 1, label: "White Bunny", value: "White Bunny" },
     { id: 2, label: "Brown Hare", value: "Brown Hare" },
@@ -81,7 +82,28 @@ const HomePage = () => {
             </div>
           }
         />
-        <Popup text="About" />
+        <Popup 
+          text="About"
+          children={
+            <div>              
+              <h2>Game story</h2>
+              <p>
+                In the game you control a rabbit named "rabbit_name", which is about to explore the famous rabbit hole in the roots of the Old Oak Tree.
+                "Rabbit_name" has grown enough to finally wander further away of his/her family free to explore the forest and of course find a looot of carrots!
+              </p><br></br>
+              <h2>Credits</h2>
+              <dl>
+
+              <dt>Arbaroriza team:</dt>
+                <ul>
+                  <li>Spyros</li>
+                  <li>Nikos</li>
+                  <li>Antonis</li>
+                  <li>Stefanos</li>
+                </ul>
+              </dl>               
+            </div>
+          } />
       </div>
     </PageStyle>
   );

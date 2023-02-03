@@ -7,17 +7,22 @@ import {
   Sidebar,
   Title,
   Door,
+  Avatar
 } from "../styles/Player_UI.style";
 import React, { useState } from "react";
 // import roomPicture from "../scenery.jpg";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import BrownHare from "../assets/BrownHare.png";
+import GrayRabbit from "../assets/GrayRabbit.png";
+import WhiteBunny from "../assets/WhiteBunny.png";
 
 const PlayerUI = (props) => {
   const textNodes = props.dialogs;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const location = useLocation();
   const player_name = location.state.name;
+  const avatar = location.state.avatar;
   let navigate = useNavigate();
 
   const routeChange = () => {
@@ -39,13 +44,6 @@ const PlayerUI = (props) => {
     );
   };
 
-//   <img
-//   src={`${process.env.PUBLIC_URL}/${location.state.avatar}.png`}
-//   width="200"
-//   height="200"
-//   alt="avatar"
-// />
-
 /* <img src={roomPicture} alt="scenery" /> */
 
   return (
@@ -63,7 +61,13 @@ const PlayerUI = (props) => {
 
       <Sidebar>
         <div>
-        
+          {avatar === "Gray Rabbit" ? (
+            <Avatar src={GrayRabbit} />
+            ) : avatar === "Brown Hare" ? (
+            <Avatar src={BrownHare} />
+            ) : (
+            <Avatar src={WhiteBunny} />
+            )}
         </div>
         <div>
           <Door size={100} onClick={routeChange} />
