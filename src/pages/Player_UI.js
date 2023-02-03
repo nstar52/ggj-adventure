@@ -8,14 +8,16 @@ import {
   Title,
   Door,
 } from "../styles/Player_UI.style";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import roomPicture from "../scenery.jpg";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Typed from "react-typed";
 
 const PlayerUI = (props) => {
   const textNodes = props.dialogs;
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [toggle, setToggle] = useState(false)
   const location = useLocation();
   const player_name = location.state.name;
   let navigate = useNavigate();
@@ -37,7 +39,12 @@ const PlayerUI = (props) => {
     setCurrentQuestion(
       textNodes.findIndex((textNode) => textNode.id === nextNode)
     );
+    setToggle(true)
   };
+
+  useEffect(() => {
+    setToggle(false)
+  }, [toggle])
 
 //   <img
 //   src={`${process.env.PUBLIC_URL}/${location.state.avatar}.png`}
@@ -71,7 +78,15 @@ const PlayerUI = (props) => {
       </Sidebar>
 
       <DialogContainer>
-        <div>{textNodes[currentQuestion].text}</div>
+        <div>
+        <Typed strings={[textNodes[currentQuestion].text]}
+          typeSpeed={50}
+          fadeOut={true}
+          showCursor
+          loop={toggle}
+        />
+        </div>
+
         <ButtonGrid>
           {textNodes[currentQuestion].options.map((option, index) => (
             <OptionButton

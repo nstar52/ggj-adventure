@@ -2,70 +2,47 @@ const Constants = {
   textNodes: [
     {
       id: 1,
-      text: "You wake up in a strange place and you see a jar of blue goo near you.",
+      text: "Our character meets Trevor the Frog",
       options: [
         {
           id: 1,
-          text: "Take the goo",
-          setState: { blueGoo: true },
+          text: "Continue",
           nextText: 2,
-        },
-        {
-          id: 2,
-          text: "Leave the goo",
-          nextText: 2,
-        },
-      ],
+        }
+      ]
     },
     {
       id: 2,
-      text: "You venture forth in search of answers to where you are when you come across a merchant.",
+      text: "Trevor asks if 'name' knows his way in the rabbit hole network 'y'",
       options: [
         {
           id: 1,
-          text: "Trade the goo for a sword",
-          requiredState: (currentState) => currentState.blueGoo,
-          setState: { blueGoo: false, sword: true },
+          text: "It's not my first time!",
           nextText: 3,
         },
         {
           id: 2,
-          text: "Trade the goo for a shield",
-          requiredState: (currentState) => currentState.blueGoo,
-          setState: { blueGoo: false, shield: true },
-          nextText: 3,
-        },
-        {
-          id: 3,
-          text: "Ignore the merchant",
-          nextText: 3,
-        },
+          text: "No, but I heard it has lots of carrots!",
+          nextText: 4,
+        }
       ],
     },
     {
       id: 3,
-      text: "After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.",
+      text: "That’s great! Can I tag along, ribbit! Promise to not slow you down, ribbit",
       options: [
         {
           id: 1,
-          text: "Explore the castle",
+          text: "Continue",
           nextText: 4,
-        },
-        {
-          id: 2,
-          text: "Find a room to sleep at in the town",
-          nextText: 5,
-        },
-        {
-          id: 3,
-          text: "Find some hay in a stable to sleep in",
-          nextText: 6,
         },
       ],
     },
     {
       id: 4,
-      text: "You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.",
+      text: "Trevor warns about the dangers and wonders if he can tag along. \
+      He is trying to reach his family in the swamp but there is a badger preying on him \
+      Prompts to go inside",
       options: [
         {
           id: 1,
@@ -76,12 +53,17 @@ const Constants = {
     },
     {
       id: 5,
-      text: "Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.",
+      text: "He is going to the swamp will you join him? It is safer and you could help each other",
       options: [
         {
           id: 1,
-          text: "Restart",
+          text: "I've never been to the swamp, does it have carrots?",
           nextText: -1,
+        },
+        {
+          id: 2,
+          text: "I've heard so much about the network, I really want to explore it!",
+          nextText: 2,
         },
       ],
     },
