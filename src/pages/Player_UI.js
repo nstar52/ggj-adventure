@@ -9,6 +9,7 @@ import {
   Door,
   Avatar,
   Window,
+  Scenery,
 } from "../styles/Player_UI.style";
 import React, { useEffect, useState } from "react";
 // import roomPicture from "../scenery.jpg";
@@ -18,6 +19,19 @@ import Typed from "react-typed";
 import BrownHare from "../assets/BrownHare.png";
 import GrayRabbit from "../assets/GrayRabbit.png";
 import WhiteBunny from "../assets/WhiteBunny.png";
+import Image1 from "../assets/image1.png";
+import Image2 from "../assets/image2.png";
+import Image3a from "../assets/image3a.png";
+import Image3b from "../assets/image3b.png";
+import Image3c from "../assets/image3c.png";
+import Image4 from "../assets/image4.png";
+import Image5 from "../assets/image5.png";
+import Image6 from "../assets/image6.png";
+import Image7 from "../assets/image7.png";
+import Image8a from "../assets/image8a.png";
+import Image8b from "../assets/image8b.png";
+import Image8c from "../assets/image8c.png";
+import Image9 from "../assets/image9.png";
 
 const PlayerUI = (props) => {
   const textNodes = props.dialogs;
@@ -38,6 +52,7 @@ const PlayerUI = (props) => {
     navigate(path);
   };
 
+
   const handleAnswerButtonClick = (nextNode) => {
     if (nextNode < 0) {
       nextNode = 1;
@@ -52,17 +67,48 @@ const PlayerUI = (props) => {
     setToggle(false);
   }, [toggle]);
 
+  const image_source = textNodes[currentQuestion].image;
+
   return (
     <PageStyle>
-      <Title>
-          <h1>Arboreal Quest: </h1>
-          <h2>Have fun {player_name}!</h2>
-        </Title>
+      
       <Window>
-        
+        <Title>
+          <h1>Arboreal Quest: Have fun {player_name}!</h1>
+        </Title>
 
         <Container>
-          <div></div>
+          <div>
+            {image_source === "image2" ? (
+              <Scenery src={Image2} />
+            ) : image_source === "image3a" ? (
+              <Scenery src={Image3a} />
+            ) : image_source === "image3b" ? (
+              <Scenery src={Image3b} />
+            ) : image_source === "image3c" ? (
+              <Scenery src={Image3c} />
+            ) : image_source === "image4" ? (
+              <Scenery src={Image4} />
+            ) : image_source === "image5" ? (
+              <Scenery src={Image5} />
+            ) : image_source === "image6" ? (
+              <Scenery src={Image6} />
+            ) : image_source === "image7" ? (
+              <Scenery src={Image7} />
+            ) : image_source === "image8a" ? (
+              <Scenery src={Image8a} />
+            ) : image_source === "image8b" ? (
+              <Scenery src={Image8b} />
+            ) : image_source === "image8c" ? (
+              <Scenery src={Image8c} />
+            ) : image_source === "image9" ? (
+              <Scenery src={Image9} />
+            ): (
+              <Scenery src={Image1} />
+            )
+            } 
+
+          </div>0
         </Container>
 
         <Sidebar>

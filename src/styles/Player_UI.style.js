@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { GiExitDoor } from "react-icons/gi"
-import Scenery1 from "../assets/scenery1.png"
+//import Scenery1 from "../assets/scenery1.png"
 
 export const PageStyle = styled.div`
 width: 100%;
@@ -12,11 +12,16 @@ padding-bottom: 10px;
 `
 
 export const Window = styled.div`
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 display: grid;
 border: 1px solid #b8bdb7;
 grid-template-columns: 3fr 1fr ;
-grid-template-rows: 3fr 2fr;
+grid-template-rows: auto;
 grid-template-areas:  
+    "header header"
     "main sidebar"
     "dialog dialog";
 `
@@ -34,10 +39,18 @@ export const Container = styled.div`
 display: grid;
 grid-area: main;
 background-color: black;
-background-image: url(${Scenery1});
+
+`
+
+export const Scenery = styled.img`
+background-color: black;
 background-size: contain;
 background-repeat: no-repeat;
+width: 90%;
+padding-top: 2%;
+padding-left: 10%;
 `
+
 export const Sidebar = styled.div`
 grid-area: sidebar;
 box-sizing: border-box;
@@ -67,6 +80,7 @@ grid-template-rows: 2fr 1fr;
 /* grid-template-columns: 1fr; */
 padding-top: 10px;
 padding-left: 5px;
+padding-bottom: 5px;
 box-shadow: 0 0 10px 2px;
 
 color: #b8bdb7;
@@ -76,6 +90,7 @@ export const ButtonGrid = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 10px;
+
 `
 
 export const OptionButton = styled.button`
