@@ -30,7 +30,7 @@ export const ModalTop = styled.div`
 export const CloseButton = styled(AiOutlineClose)`
   display: inline-block;
   font-weight: 500;
-  color: black;
+  color: #101010;
   text-align: center;
   font-size: 1em;
   padding: 1rem;
@@ -41,6 +41,6 @@ export const CloseButton = styled(AiOutlineClose)`
   cursor: pointer;
   :hover {
     background-color: black;
-    color: white;
+    color: #B8BDB7;
   }
 `;

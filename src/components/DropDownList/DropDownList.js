@@ -1,5 +1,5 @@
 import React from "react";
-import { Select } from "./DropDownList.style";
+import { Select, Paragraph } from "./DropDownList.style";
 
 const Dropdown = ({ value, options, onChange }) => {
   return (
@@ -12,7 +12,7 @@ const Dropdown = ({ value, options, onChange }) => {
         ))}
       </Select>
 
-      <p> You selected {value}</p>
+      <Paragraph> You selected {value}</Paragraph>
     </>
   );
 };

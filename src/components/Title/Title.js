@@ -1,9 +1,10 @@
 import React from "react";
+import { Header } from "./Title.style";
 
 const Title = (props) => {
   return (
     <div>
-      <h1>{props.text}</h1>
+      <Header>{props.text}</Header>
     </div>
   );
 };

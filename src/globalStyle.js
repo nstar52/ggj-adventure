@@ -20,5 +20,6 @@ input{
     height: 40%;    
     padding-left: 2rem;
     font-size: 30px;
+    background-color: #101010;
 }
 `
