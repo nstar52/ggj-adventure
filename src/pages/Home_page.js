@@ -88,14 +88,14 @@ const HomePage = () => {
             <div>              
               <h2>Game story</h2>
               <p>
-                In the game you control a rabbit named "rabbit_name", which is about to explore the famous rabbit hole in the roots of the Old Oak Tree.
-                "Rabbit_name" has grown enough to finally wander further away of his/her family free to explore the forest and of course find a looot of carrots!
+                In the game you control a rabbit named Eisenhopper, which is about to explore the famous rabbit hole in the roots of the Old Oak Tree.
+                Eisenhopper has grown enough to finally wander further away of his/her family free to explore the forest and of course find a looot of carrots!
               </p><br></br>
               <h2>Credits</h2>
               <dl>
 
               <dt>Arbaroriza team:</dt>
-                <ul>
+                <ul style={{paddingLeft: '55px'}}>
                   <li>Spyros</li>
                   <li>Nikos</li>
                   <li>Antonis</li>

@@ -7,7 +7,8 @@ import {
   Sidebar,
   Title,
   Door,
-  Avatar
+  Avatar,
+  Window
 } from "../styles/Player_UI.style";
 import React, { useState } from "react";
 // import roomPicture from "../scenery.jpg";
@@ -47,7 +48,7 @@ const PlayerUI = (props) => {
 /* <img src={roomPicture} alt="scenery" /> */
 
   return (
-    <PageStyle>
+    <PageStyle><Window>
       <Title>
         <h1>Awesome Game: </h1>
         <h2>Have fun {player_name}!</h2>
@@ -86,7 +87,7 @@ const PlayerUI = (props) => {
             </OptionButton>
           ))}
         </ButtonGrid>
-      </DialogContainer>
+      </DialogContainer></Window>
     </PageStyle>
   );
 };
