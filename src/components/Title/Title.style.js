@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+background-color: #b8bdb7;
   h1 {
     font-size: 21px;
-    color: #313131;
-    font-weight: 700;
+    font-weight: 500;
     /* padding-bottom: 10px; */
   }
 `;

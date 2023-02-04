@@ -7,7 +7,7 @@ export const PageStyle = styled.div`
   grid-template-rows: 100vh;
   align-items: center;
   justify-items: center; /* adjusted */
-  background-color: black;
+  background-color: #101010;
 
   h1 {
     color: white;

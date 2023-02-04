@@ -40,7 +40,7 @@ const Constants = {
     },
     {
       id: 4,
-      text: "Trevor warns about the dangers and wonders if he can tag along. \
+      text: "Trevor warns about the dangers and wonders if he can tag along. <br /> \
       He is trying to reach his family in the swamp but there is a badger preying on him \
       Prompts to go inside",
       options: [
