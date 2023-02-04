@@ -14,7 +14,7 @@ export const PageStyle = styled.div`
 export const Bullets = styled.dl`
   dt {
     margin-top: 10px;
-    color: #101010;
+    color: #b8bdb7;
     font-weight: 600;
   }
   ul {
@@ -22,13 +22,13 @@ export const Bullets = styled.dl`
     font-weight: 500;
   }
   li {
-    color: #101010;
+    color: #b8bdb7;
     font-size: 25px;
   }
 `;
 
 export const Paragraph = styled.p`
-  color: #101010;
+  color: #b8bdb7;
   font-size: 25px;
   font-weight: 500;
 `;
@@ -38,11 +38,16 @@ export const Character = styled.div`
   grid-template-columns: 1fr 1fr;
   /* padding: 2rem 1.5rem 0.5rem 2rem; */
 
-  input {
-    background-color: transparent;
-    border-color: #8b4513;
-    width: 75%;
-  }
+  input{
+    border: 2px solid #b8bdb7;
+    border-radius: 4px;
+    width: 90%;
+    height: 40%;
+    padding-left: 2rem;
+    font-size: 30px;
+    background-color: #101010;
+    color: #b8bdb7;
+}
 `;
 
 export const AvatarContainer = styled.div`
@@ -73,7 +78,7 @@ export const ModalBottom = styled.div`
     font-style: italic;
     border-color: #101010;
     border-radius: 15px;
-    background-color: transparent;
+    background-color: #b8bdb7;
     box-shadow: 2px 2px;
 
     :hover {

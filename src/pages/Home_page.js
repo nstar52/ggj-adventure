@@ -41,7 +41,7 @@ const HomePage = () => {
   return (
     <PageStyle>
       
-      <Title color='#B8BDB7' size='50px' text="Arboreal Quest"></Title>
+      <Title color='#B8BDB7' size='50px' text="Welcome to the Arboreal Quest"></Title>
   
       <div>
         <Popup

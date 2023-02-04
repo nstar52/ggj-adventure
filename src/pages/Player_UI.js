@@ -54,11 +54,12 @@ const PlayerUI = (props) => {
 
   return (
     <PageStyle>
-      <Window>
-        <Title>
+      <Title>
           <h1>Arboreal Quest: </h1>
           <h2>Have fun {player_name}!</h2>
         </Title>
+      <Window>
+        
 
         <Container>
           <div></div>

@@ -5,14 +5,14 @@ export const Select = styled.select`
   height: 100%;
   border-radius: 8px;
   border: 1px solid #c6c6c6;
-  color: #101010;
+  color: #b8bdb7;
   font-size: 25px;
   font-weight: 500;
   opacity: 1;
   padding: 0 5px;
   background-color: transparent;
   box-sizing: border-box;
-  border-color: #8b4513;
+  border-color: #b8bdb7;
   margin-left: 15%;
 `;
 

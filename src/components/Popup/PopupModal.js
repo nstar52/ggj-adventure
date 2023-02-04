@@ -32,10 +32,9 @@ const PopupModal = (props) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
         <ModalTop>
-          <Title size='40px' text="Welcome !" />
+          <Title size='40px' text="Welcome to the Arboreal Quest" />
          
             <CloseButton size={20} onClick={closeModal} />
      
