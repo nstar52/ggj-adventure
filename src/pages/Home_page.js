@@ -94,8 +94,8 @@ const HomePage = () => {
             <div>              
               <Title size='35px' text="Game story" />
               <Paragraph>
-                In the game you control a rabbit named Eisenhopper, which is about to explore the famous rabbit hole in the roots of the Old Oak Tree.
-                Eisenhopper has grown enough to finally wander further away of his/her family free to explore the forest and of course find a looot of carrots!
+              In the game you control a rabbit named Eisenhopper, who is about to explore the famous underground rabbit hole network, in the roots of the Old Oak Tree Ecna, located at the edge of Pando forest											
+              Eisenhopper has grown enough to finally wander further away of his/her family free to explore the forest and of course find a looot of carrots!												
               </Paragraph>
               <Title text='Credits' align='Left' size='30px' />
               <Bullets>
