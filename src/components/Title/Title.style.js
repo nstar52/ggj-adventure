@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Header = styled.h1`
-  font-size: 21px;
+  font-size: ${props => props.size ? props.size : props.size='20px'};
   font-weight: 700;
-  color: #101010;
+  color: ${props => props.color ? props.color : props.align='#101010'};
+  text-align: ${props => props.align ? props.align : props.align='center'};
+  margin-top:10px
 `;

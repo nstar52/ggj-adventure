@@ -56,7 +56,7 @@ const PlayerUI = (props) => {
     <PageStyle>
       <Window>
         <Title>
-          <h1>Awesome Game: </h1>
+          <h1>Arboreal Quest: </h1>
           <h2>Have fun {player_name}!</h2>
         </Title>
 
@@ -83,7 +83,7 @@ const PlayerUI = (props) => {
           <div>
             <Typed
               strings={[textNodes[currentQuestion].text]}
-              typeSpeed={50}
+              typeSpeed={35}
               fadeOut={true}
               showCursor
               loop={toggle}

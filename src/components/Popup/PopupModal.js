@@ -3,7 +3,8 @@ import Modal from "react-modal";
 import {
   customStyles,
   CloseButton,
-  ModalTop
+  ModalTop,
+  Container
 } from "./PopupModal.style";
 import Button from "../Button/Button";
 import Title from "../Title/Title";
@@ -24,6 +25,7 @@ const PopupModal = (props) => {
 
   return (
     <>
+    
       <Button onClick={openModal} text={props.text} />
 
       <Modal
@@ -33,8 +35,11 @@ const PopupModal = (props) => {
         contentLabel="Example Modal"
       >
         <ModalTop>
-          <Title text="Welcome !" />
-          <CloseButton size={20} onClick={closeModal} />
+          <Title size='40px' text="Welcome !" />
+         
+            <CloseButton size={20} onClick={closeModal} />
+     
+
         </ModalTop>
         {props.children}
       </Modal>

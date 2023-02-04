@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { GiExitDoor } from "react-icons/gi"
+import Scenery1 from "../assets/scenery1.png"
 
 export const PageStyle = styled.div`
 width: 100vw;
@@ -41,6 +42,8 @@ font-size: 40px;
 export const Container = styled.div`
 grid-area: main;
 background-color: red;
+background-image: url(${Scenery1});
+background-size: cover;
 display: flex;
 justify-items: center;
 img {
@@ -49,7 +52,7 @@ img {
 `
 export const Sidebar = styled.div`
 grid-area: sidebar;
-outline: 1px dashed white;
+/* outline: 1px dashed white; */
 box-sizing: border-box;
 display: grid;
 grid-template-columns: .7fr;

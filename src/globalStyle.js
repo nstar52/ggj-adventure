@@ -17,7 +17,7 @@ input{
     border: 2px solid gray;
     border-radius: 4px;
     width: 90%;
-    height: 40%;    
+    height: 40%;
     padding-left: 2rem;
     font-size: 30px;
     background-color: #101010;

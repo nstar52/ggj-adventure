@@ -7,11 +7,15 @@ import {
   Character,
   ModalBottom,
   AvatarContainer,
+  Bullets,
+  Paragraph,
+  Container
 } from "../styles/HomePage.style";
 import { useNavigate } from "react-router-dom";
 import BrownHare from "../assets/BrownHare.png";
 import GrayRabbit from "../assets/GrayRabbit.png";
 import WhiteBunny from "../assets/WhiteBunny.png";
+
 
 const HomePage = () => {
   const [playerName, setPlayerName] = useState("player name");
@@ -36,8 +40,10 @@ const HomePage = () => {
 
   return (
     <PageStyle>
+      
+      <Title color='#B8BDB7' size='50px' text="Arboreal Quest"></Title>
+  
       <div>
-        <Title text="Game Title"></Title>
         <Popup
           text="New Game"
           children={
@@ -45,17 +51,17 @@ const HomePage = () => {
               <Character>
                 <RowStyle>
                   <div>
-                    <Title text="Enter your name" />
+                    <Title size='25px' text="Enter your name" />
 
                     <input
                       onChange={(e) => setPlayerName(e.target.value)}
-                      value={playerName}
+                      placeholder='Type a name'
                     />
                   </div>
                 </RowStyle>
 
-                <RowStyle>
-                  <Title text="Pick a character" />
+                <RowStyle gap='10px'>
+                  <Title size='25px' text="Pick a character" />
                   <DropDown
                     options={options}
                     value={value}
@@ -86,22 +92,22 @@ const HomePage = () => {
           text="About"
           children={
             <div>              
-              <h2>Game story</h2>
-              <p>
+              <Title size='35px' text="Game story" />
+              <Paragraph>
                 In the game you control a rabbit named Eisenhopper, which is about to explore the famous rabbit hole in the roots of the Old Oak Tree.
                 Eisenhopper has grown enough to finally wander further away of his/her family free to explore the forest and of course find a looot of carrots!
-              </p><br></br>
-              <h2>Credits</h2>
-              <dl>
+              </Paragraph>
+              <Title text='Credits' align='Left' size='30px' />
+              <Bullets>
 
               <dt>Arbaroriza team:</dt>
-                <ul style={{paddingLeft: '55px'}}>
+                <ul>
                   <li>Spyros</li>
                   <li>Nikos</li>
                   <li>Antonis</li>
                   <li>Stefanos</li>
                 </ul>
-              </dl>               
+              </Bullets>               
             </div>
           } />
       </div>

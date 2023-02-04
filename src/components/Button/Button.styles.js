@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-  font-size: 16px;
+  font-size: 30px;
   padding: 20px;
   width: 100%;
   background-color: #B8BDB7;
@@ -9,6 +9,7 @@ export const StyledButton = styled.button`
 `;
 
 export const Centered = styled.div`
-  border: 5px solid #B8BDB7;
+  border: 5px solid #101010;
   text-align: center;
+
 `;
