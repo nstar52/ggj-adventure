@@ -18,6 +18,7 @@ const Constants = {
         {
           id: 1,
           text: "It's not my first time!",
+          setState: {'sword': 2},
           nextText: 3,
         },
         {
@@ -34,6 +35,7 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
+          requiredState: {"sword": 1},
           nextText: 4,
         },
       ],

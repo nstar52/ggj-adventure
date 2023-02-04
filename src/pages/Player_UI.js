@@ -23,6 +23,7 @@ const PlayerUI = (props) => {
   const textNodes = props.dialogs;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [toggle, setToggle] = useState(false);
+  const [gameState, setGameState] = useState([]);
   const location = useLocation();
   const player_name = location.state.name;
   const avatar = location.state.avatar;
@@ -48,8 +49,15 @@ const PlayerUI = (props) => {
     setToggle(true);
   };
 
+  const add = (state) => {
+    gameState.push(state);
+  }
+
+
   useEffect(() => {
+    
     setToggle(false);
+    
   }, [toggle]);
 
   return (
@@ -93,12 +101,14 @@ const PlayerUI = (props) => {
 
           <ButtonGrid>
             {textNodes[currentQuestion].options.map((option, index) => (
-              <OptionButton
-                key={index}
-                onClick={() => handleAnswerButtonClick(option.nextText)}
-              >
-                {option.text}
-              </OptionButton>
+                               
+                <OptionButton
+                  key={index}
+                  onClick={() => handleAnswerButtonClick(option.nextText)}
+                >
+                  
+                  {option.text}
+                </OptionButton> 
             ))}
           </ButtonGrid>
         </DialogContainer>
