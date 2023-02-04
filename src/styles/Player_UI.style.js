@@ -16,6 +16,19 @@ grid-template-areas:
     "footer footer footer footer";
 `
 
+export const Window = styled.div`
+display: grid;
+grid-template-columns: 1fr 0.5fr ;
+grid-template-rows: auto;
+grid-template-areas:
+    "header header "    
+    "main sidebar"
+    "dialog dialog"
+    "footer footer ";
+width: 900px;
+height: 900px;
+`
+
 export const Title = styled.div`
 grid-area: header;
 color: white;
@@ -39,39 +52,42 @@ grid-area: sidebar;
 outline: 1px dashed white;
 box-sizing: border-box;
 display: grid;
-grid-template-columns: repeat(1, auto);
-
+grid-template-columns: .7fr;
+align-items: center;
 `
+
+export const Avatar = styled.img`
+  width: 120px;
+  height: 120px;
+  padding-left: 45%;
+`;
 
 export const Door = styled(GiExitDoor)`
 color: green;
-padding-left: 50px;
+padding-left: 50%;
 cursor: pointer;
-
 `
-
 
 export const DialogContainer = styled.div`
 grid-area: dialog;
 box-sizing: border-box;
-width: 100%;
 background-color: grey;
+height: 200px;
 padding-top: 10px;
 padding: 5px;
 box-shadow: 0 0 10px 2px;
+display: grid;
 `
 
 export const ButtonGrid = styled.div`
 display: grid;
 grid-template-columns: repeat(2, auto);
 gap: 10px;
-margin-top: 20px;
 `
 
 export const OptionButton = styled.button`
 background-color: hsl(200, 100%, 50%);
 border: 1px solid hsl(200, 100%, 30%);
 border-radius: 5px;
-padding: 5px 10px;
 color: white;
 `

@@ -4,8 +4,8 @@ export const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-size: 25px;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
 }
 
 body{
