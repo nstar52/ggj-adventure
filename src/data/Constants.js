@@ -8,8 +8,8 @@ const Constants = {
           id: 1,
           text: "Continue",
           nextText: 2,
-        }
-      ]
+        },
+      ],
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Constants = {
           id: 2,
           text: "No, but I heard it has lots of carrots!",
           nextText: 4,
-        }
+        },
       ],
     },
     {
@@ -40,9 +40,7 @@ const Constants = {
     },
     {
       id: 4,
-      text: "Trevor warns about the dangers and wonders if he can tag along. <br /> \
-      He is trying to reach his family in the swamp but there is a badger preying on him \
-      Prompts to go inside",
+      text: "Trevor warns about the dangers and wonders if he can tag along. He is trying to reach his family in the swamp but there is a badger preying on him Prompts to go inside",
       options: [
         {
           id: 1,
