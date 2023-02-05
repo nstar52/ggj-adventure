@@ -9,13 +9,17 @@ import {
   Door,
   Avatar,
   Window,
-  Scenery,
+  Scenery
 } from "../styles/Player_UI.style";
 import React, { useEffect, useState } from "react";
 // import roomPicture from "../scenery.jpg";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Typed from "react-typed";
+import Typist from 'react-typist';
+import Typical from "react-typical";
+// import Typewriter from 'typewriter-effect';
+import { Typewriter } from 'react-simple-typewriter';
 import BrownHare from "../assets/BrownHare.png";
 import GrayRabbit from "../assets/GrayRabbit.png";
 import WhiteBunny from "../assets/WhiteBunny.png";
@@ -37,15 +41,16 @@ import Image9 from "../assets/image9.png";
 const PlayerUI = (props) => {
   const textNodes = props.dialogs;
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const player_name = location.state.name;
   const avatar = location.state.avatar;
   let navigate = useNavigate();
-  const [question, setQuestion] = useState("test");
+  const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState([]);
   const [gameState, setGameState] = useState([]);
   const image_source = textNodes[currentQuestion].image;
+  const [currentTextCounter, setCurrentTextCounter] = useState(0);
+
 
   const routeChange = () => {
     let path = "/";
@@ -57,45 +62,50 @@ const PlayerUI = (props) => {
     navigate(path);
   };
 
-  const handleAnswerButtonClick = (nextNode) => {
+
+  const handleAnswerButtonClick = (nextNode, setState=null) => {
     if (nextNode < 0) {
       nextNode = 1;
     }
+
+    if (setState) {
+      let data = gameState.filter((item) => item.id === setState.id);
+      if (data.length > 0) {
+        let number = gameState.findIndex(
+          (result) => result.id === setState.id
+        );
+        gameState[number].value =
+          gameState[number].value + setState.value;
+      } else {
+        gameState.push(setState);
+      }
+    } 
+
     setCurrentQuestion(
       textNodes.findIndex((textNode) => textNode.id === nextNode)
     );
-    setToggle(true);
   };
 
   useEffect(() => {
-    
-    function readQuestion(id) {
-      // textNodes[id].text.replace("'player'", "player_name")
- 
+    const readQuestion = (id) => {
+      
+
+
       setQuestion(textNodes[id].text.replace("'player'", "player_name"));
+
       while (answers.length > 0) {
         answers.pop();
       }
+
       textNodes[id].options.forEach((option) => {
-        if (option.setState) {
-          let data = gameState.filter((item) => item.id === option.setState.id);
-          if (data.length > 0) {
-            let number = gameState.findIndex(
-              (result) => result.id === option.setState.id
-            );
-            gameState[number].value =
-              gameState[number].value + option.setState.value;
-          } else {
-            gameState.push(option.setState);
-          }
-          answers.push(option);
-        } else if (option.requiredState) {
+       if (option.requiredState) {
+          console.log(gameState)
           let data = gameState.filter(
             (item) =>
               item.id === option.requiredState.id &&
               item.value >= option.requiredState.value
           );
-
+          console.log(data)
           if (data.length > 0) {
             answers.push(option);
             let number = gameState.findIndex(
@@ -108,14 +118,23 @@ const PlayerUI = (props) => {
               gameState.splice(number, 1);
             }
           }
-        } else {
+        }
+        else {
+          console.log(option);
           answers.push(option);
         }
       });
     };
+
+
+
+     
     readQuestion(currentQuestion);
-    setToggle(false);
-  }, [toggle, textNodes, currentQuestion, answers, gameState]);
+    
+  });
+  
+
+
 
   return (
     <PageStyle>
@@ -175,21 +194,30 @@ const PlayerUI = (props) => {
         </Sidebar>
 
         <DialogContainer>
-          <div>
+          {/* <div>
             <Typed
               strings={[question]}
               typeSpeed={35}
               fadeOut={true}
-              showCursor
-              loop={toggle}
+              onComplete={stop}
+              loop
             />
-          </div>
+          </div>  */}
+
+          <Typical steps={[question]} wrapper={'p'}/>
+           {/* <Typewriter
+            words={[question]}
+            typeSpeed={70}
+            delaySpeed={1000}
+          />
+           */}
+          
 
           <ButtonGrid>
             {answers.map((answer) => (
               <OptionButton
                 key={answer.id}
-                onClick={() => handleAnswerButtonClick(answer.nextText)}
+                onClick={() => handleAnswerButtonClick(answer.nextText, answer.setState)}
               >
                 {answer.text}
               </OptionButton>

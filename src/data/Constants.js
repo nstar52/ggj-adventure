@@ -8,7 +8,6 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          setState: {'id': 'sword', 'value': 2},
           nextText: 2,
         }
       ],
@@ -20,7 +19,6 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          requiredState: {'id':'sword', 'value': 1},
           nextText: 3,
         }
       ],
@@ -262,7 +260,7 @@ const Constants = {
     },
     {
       id: 22,
-      text: "Player: Who are you?",
+      text: "'player': Who are you?",
       options: [
         {
           id: 1,
@@ -311,13 +309,13 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          requireState: {'id': 'trevor', 'value': 1},
+          requiredState: {'id': 'trevor', 'value': 1},
           nextText: 27,
         },
         {
           id: 2,
           text: "Continue",
-          requireState: {'id': 'deeper', 'value': 1},
+          requiredState: {'id': 'deeper', 'value': 1},
           nextText: 57,
         }
       ],
@@ -391,13 +389,13 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          requireState: {'id': 'bone', 'value': 1},
+          requiredState: {'id': 'bone', 'value': 1},
           nextText: 33,
         },
         {
           id: 2,
           text: "Continue",
-          requireState: {'id': 'carrot', 'value': 1},
+          requiredState: {'id': 'carrot', 'value': 1},
           nextText: 42,
         }
       ],
@@ -837,13 +835,13 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          requireState: {'id': 'cheese', 'value': 1},
+          requiredState: {'id': 'cheese', 'value': 1},
           nextText: 71,
         },
         {
           id: 1,
           text: "Continue",
-          requireState: {'id': 'purple carrot', 'value': 1},
+          requiredState: {'id': 'purple carrot', 'value': 1},
           nextText: 72,
         }
       ],
@@ -950,7 +948,7 @@ const Constants = {
         {
           id: 2,
           text: "Take out the sharp bone and fight!",
-          requireState: {'id': 'bone', 'value': 1},
+          requiredState: {'id': 'bone', 'value': 1},
           nextText: 81,
         }
       ],
