@@ -9,17 +9,17 @@ import {
   Door,
   Avatar,
   Window,
-  Scenery
+  Scenery,
 } from "../styles/Player_UI.style";
 import React, { useEffect, useState } from "react";
 // import roomPicture from "../scenery.jpg";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Typed from "react-typed";
-import Typist from 'react-typist';
+import Typist from "react-typist";
 import Typical from "react-typical";
 // import Typewriter from 'typewriter-effect';
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import BrownHare from "../assets/BrownHare.png";
 import GrayRabbit from "../assets/GrayRabbit.png";
 import WhiteBunny from "../assets/WhiteBunny.png";
@@ -37,7 +37,6 @@ import Image8b from "../assets/image8b.jpg";
 import Image8c from "../assets/image8c.jpg";
 import Image9 from "../assets/image9.jpg";
 
-
 const PlayerUI = (props) => {
   const textNodes = props.dialogs;
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -51,7 +50,6 @@ const PlayerUI = (props) => {
   const image_source = textNodes[currentQuestion].image;
   const [currentTextCounter, setCurrentTextCounter] = useState(0);
 
-
   const routeChange = () => {
     let path = "/";
     navigate(path);
@@ -62,8 +60,7 @@ const PlayerUI = (props) => {
     navigate(path);
   };
 
-
-  const handleAnswerButtonClick = (nextNode, setState=null) => {
+  const handleAnswerButtonClick = (nextNode, setState = null) => {
     if (nextNode < 0) {
       nextNode = 1;
     }
@@ -71,15 +68,12 @@ const PlayerUI = (props) => {
     if (setState) {
       let data = gameState.filter((item) => item.id === setState.id);
       if (data.length > 0) {
-        let number = gameState.findIndex(
-          (result) => result.id === setState.id
-        );
-        gameState[number].value =
-          gameState[number].value + setState.value;
+        let number = gameState.findIndex((result) => result.id === setState.id);
+        gameState[number].value = gameState[number].value + setState.value;
       } else {
         gameState.push(setState);
       }
-    } 
+    }
 
     setCurrentQuestion(
       textNodes.findIndex((textNode) => textNode.id === nextNode)
@@ -88,9 +82,6 @@ const PlayerUI = (props) => {
 
   useEffect(() => {
     const readQuestion = (id) => {
-      
-
-
       setQuestion(textNodes[id].text.replace("'player'", "player_name"));
 
       while (answers.length > 0) {
@@ -98,14 +89,14 @@ const PlayerUI = (props) => {
       }
 
       textNodes[id].options.forEach((option) => {
-       if (option.requiredState) {
-          console.log(gameState)
+        if (option.requiredState) {
+          console.log(gameState);
           let data = gameState.filter(
             (item) =>
               item.id === option.requiredState.id &&
               item.value >= option.requiredState.value
           );
-          console.log(data)
+          console.log(data);
           if (data.length > 0) {
             answers.push(option);
             let number = gameState.findIndex(
@@ -118,23 +109,15 @@ const PlayerUI = (props) => {
               gameState.splice(number, 1);
             }
           }
-        }
-        else {
+        } else {
           console.log(option);
           answers.push(option);
         }
       });
     };
 
-
-
-     
     readQuestion(currentQuestion);
-    
   });
-  
-
-
 
   return (
     <PageStyle>
@@ -169,14 +152,11 @@ const PlayerUI = (props) => {
               <Scenery src={Image8c} />
             ) : image_source === "image9" ? (
               <Scenery src={Image9} />
-            ): (
+            ) : (
               <Scenery src={Image1} />
-            )
-            } 
-
+            )}
           </div>
         </Container>
-
 
         <Sidebar>
           <div>
@@ -204,20 +184,21 @@ const PlayerUI = (props) => {
             />
           </div>  */}
 
-          <Typical steps={[question]} wrapper={'p'}/>
-           {/* <Typewriter
+          <Typical steps={[question]} wrapper={"p"} />
+          {/* <Typewriter
             words={[question]}
             typeSpeed={70}
             delaySpeed={1000}
           />
            */}
-          
 
           <ButtonGrid>
             {answers.map((answer) => (
               <OptionButton
                 key={answer.id}
-                onClick={() => handleAnswerButtonClick(answer.nextText, answer.setState)}
+                onClick={() =>
+                  handleAnswerButtonClick(answer.nextText, answer.setState)
+                }
               >
                 {answer.text}
               </OptionButton>
