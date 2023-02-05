@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/ggj-adventure/static/js/main.76e1babd.js",
+    "static/media/image5.jpg": "/ggj-adventure/static/media/image5.053d9c1a3c13b894238f.jpg",
+    "static/media/image6.jpg": "/ggj-adventure/static/media/image6.7a0e945333577f7cfbfd.jpg",
+    "static/media/image1.jpg": "/ggj-adventure/static/media/image1.55562ffb174acc24640e.jpg",
+    "static/media/image2.jpg": "/ggj-adventure/static/media/image2.adbb3c4d205f3810966c.jpg",
+    "static/media/image8c.jpg": "/ggj-adventure/static/media/image8c.2f78b2203783b58299db.jpg",
+    "static/media/image8b.jpg": "/ggj-adventure/static/media/image8b.e964a3d1868ce5a80ea5.jpg",
+    "static/media/image8a.jpg": "/ggj-adventure/static/media/image8a.3b2f19f066df40bdbea8.jpg",
+    "static/media/image9.jpg": "/ggj-adventure/static/media/image9.43254a39884f6510a1b1.jpg",
+    "static/media/image3c.jpg": "/ggj-adventure/static/media/image3c.c6ff0e0f3823a8d2cdb7.jpg",
+    "static/media/image3b.jpg": "/ggj-adventure/static/media/image3b.84496086b5207dcbe03d.jpg",
+    "static/media/image4.jpg": "/ggj-adventure/static/media/image4.0c7e5444ea099f2e3188.jpg",
+    "static/media/image3a.jpg": "/ggj-adventure/static/media/image3a.5493cb60cca7e8e76320.jpg",
+    "static/media/image7.jpg": "/ggj-adventure/static/media/image7.5493cb60cca7e8e76320.jpg",
+    "index.html": "/ggj-adventure/index.html",
+    "main.76e1babd.js.map": "/ggj-adventure/static/js/main.76e1babd.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.76e1babd.js"
+  ]
+}
