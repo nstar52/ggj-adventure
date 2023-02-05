@@ -23,11 +23,13 @@ const PlayerUI = (props) => {
   const textNodes = props.dialogs;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [toggle, setToggle] = useState(false);
-  const [gameState, setGameState] = useState([]);
   const location = useLocation();
   const player_name = location.state.name;
   const avatar = location.state.avatar;
   let navigate = useNavigate();
+  const [question, setQuestion] = useState("test");
+  const [answers, setAnswers] = useState([]);
+  const [gameState, setGameState] = useState([]);
 
   const routeChange = () => {
     let path = "/";
@@ -49,26 +51,62 @@ const PlayerUI = (props) => {
     setToggle(true);
   };
 
-  const add = (state) => {
-    gameState.push(state);
-  }
-
-
   useEffect(() => {
     
+    function readQuestion(id) {
+ 
+      setQuestion(textNodes[id].text.replace("'player'", player_name));
+      while (answers.length > 0) {
+        answers.pop();
+      }
+      textNodes[id].options.forEach((option) => {
+        if (option.setState) {
+          let data = gameState.filter((item) => item.id === option.setState.id);
+          if (data.length > 0) {
+            let number = gameState.findIndex(
+              (result) => result.id === option.setState.id
+            );
+            gameState[number].value =
+              gameState[number].value + option.setState.value;
+          } else {
+            gameState.push(option.setState);
+          }
+          answers.push(option);
+        } else if (option.requiredState) {
+          let data = gameState.filter(
+            (item) =>
+              item.id === option.requiredState.id &&
+              item.value >= option.requiredState.value
+          );
+
+          if (data.length > 0) {
+            answers.push(option);
+            let number = gameState.findIndex(
+              (result) => result.id === option.requiredState.id
+            );
+            gameState[number].value =
+              gameState[number].value - option.requiredState.value;
+
+            if (gameState[number].value === 0) {
+              gameState.splice(number, 1);
+            }
+          }
+        } else {
+          answers.push(option);
+        }
+      });
+    };
+    readQuestion(currentQuestion);
     setToggle(false);
-    
-  }, [toggle]);
+  }, [toggle, textNodes, currentQuestion, answers, gameState]);
 
   return (
     <PageStyle>
       <Title>
-          <h1>Arboreal Quest: </h1>
-          <h2>Have fun {player_name}!</h2>
-        </Title>
+        <h1>Arboreal Quest: </h1>
+        <h2>Have fun {player_name}!</h2>
+      </Title>
       <Window>
-        
-
         <Container>
           <div></div>
         </Container>
@@ -91,7 +129,7 @@ const PlayerUI = (props) => {
         <DialogContainer>
           <div>
             <Typed
-              strings={[textNodes[currentQuestion].text]}
+              strings={[question]}
               typeSpeed={35}
               fadeOut={true}
               showCursor
@@ -100,15 +138,13 @@ const PlayerUI = (props) => {
           </div>
 
           <ButtonGrid>
-            {textNodes[currentQuestion].options.map((option, index) => (
-                               
-                <OptionButton
-                  key={index}
-                  onClick={() => handleAnswerButtonClick(option.nextText)}
-                >
-                  
-                  {option.text}
-                </OptionButton> 
+            {answers.map((answer) => (
+              <OptionButton
+                key={answer.id}
+                onClick={() => handleAnswerButtonClick(answer.nextText)}
+              >
+                {answer.text}
+              </OptionButton>
             ))}
           </ButtonGrid>
         </DialogContainer>

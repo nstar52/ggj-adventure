@@ -5,6 +5,7 @@ import PlayerUI from "./pages/Player_UI";
 import Constants from "./data/Constants";
 import EndPage from "./pages/End_page";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           element={<PlayerUI dialogs={Constants.textNodes} />}
         />
         <Route path="/end" element={<EndPage />} />
+        <Route path="/test" element={<Test dialogs={Constants.textNodes} />} />
       </Routes>
     </Router>
     </HelmetProvider>
