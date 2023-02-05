@@ -45,6 +45,7 @@ const PlayerUI = (props) => {
   useEffect(() => {
     setToggle(false)
   }, [toggle])
+<<<<<<< Updated upstream
 
 //   <img
 //   src={`${process.env.PUBLIC_URL}/${location.state.avatar}.png`}
@@ -54,9 +55,13 @@ const PlayerUI = (props) => {
 // />
 
 /* <img src={roomPicture} alt="scenery" /> */
+=======
+>>>>>>> Stashed changes
 
+  
   return (
     <PageStyle>
+<<<<<<< Updated upstream
       <Title>
         <h1>Awesome Game: </h1>
         <h2>Have fun {player_name}!</h2>
@@ -87,6 +92,75 @@ const PlayerUI = (props) => {
         />
         </div>
 
+=======
+      <Window>
+        <Title>
+          <h1>Arboreal Quest: Have fun {player_name}!</h1>
+        </Title>
+
+        <Container>
+          <div>
+            {image_source === "image2" ? (
+              <Scenery src={Image2} />
+            ) : image_source === "image3a" ? (
+              <Scenery src={Image3a} />
+            ) : image_source === "image3b" ? (
+              <Scenery src={Image3b} />
+            ) : image_source === "image3c" ? (
+              <Scenery src={Image3c} />
+            ) : image_source === "image4" ? (
+              <Scenery src={Image4} />
+            ) : image_source === "image5" ? (
+              <Scenery src={Image5} />
+            ) : image_source === "image6" ? (
+              <Scenery src={Image6} />
+            ) : image_source === "image7" ? (
+              <Scenery src={Image7} />
+            ) : image_source === "image8a" ? (
+              <Scenery src={Image8a} />
+            ) : image_source === "image8b" ? (
+              <Scenery src={Image8b} />
+            ) : image_source === "image8c" ? (
+              <Scenery src={Image8c} />
+            ) : image_source === "image9" ? (
+              <Scenery src={Image9} />
+            ): (
+              <Scenery src={Image1} />
+            )
+            } 
+
+          </div>
+        </Container>
+
+
+        <Sidebar>
+          <div>
+            {avatar === "Gray Rabbit" ? (
+              <Avatar src={GrayRabbit} />
+            ) : avatar === "Brown Hare" ? (
+              <Avatar src={BrownHare} />
+            ) : (
+              <Avatar src={WhiteBunny} />
+            )}
+          </div>
+          <div>
+            <Door size={100} onClick={routeChange} />
+          </div>
+        </Sidebar>
+
+        <DialogContainer>
+          <div>
+            <Typed
+              strings={[textNodes[currentQuestion].text]}
+              typeSpeed={35}
+              fadeOut={true}
+              showCursor
+              loop={toggle}
+            />
+          </div>
+
+          
+>>>>>>> Stashed changes
         <ButtonGrid>
           {textNodes[currentQuestion].options.map((option, index) => (
             <OptionButton
@@ -94,10 +168,18 @@ const PlayerUI = (props) => {
               onClick={() => handleAnswerButtonClick(option.nextText)}
             >
               {option.text}
+<<<<<<< Updated upstream
             </OptionButton>
           ))}
         </ButtonGrid>
       </DialogContainer>
+=======
+              </OptionButton>
+            ))}
+          </ButtonGrid>
+        </DialogContainer>
+      </Window>
+>>>>>>> Stashed changes
     </PageStyle>
   );
 };
