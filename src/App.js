@@ -17,9 +17,9 @@ function App() {
       <GlobalStyle />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/ggj-adventure/" element={<HomePage />} />
         <Route
-          path="/story"
+          path="/ggj-adventure/story"
           element={<PlayerUI dialogs={Constants.textNodes} />}
         />
         <Route path="/end" element={<EndPage />} />
