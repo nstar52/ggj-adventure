@@ -2,7 +2,7 @@ const Constants = {
   textNodes: [
     {
       id: 1,
-      text: "The giant Old Oak Tree Ecna stands proud 'player' at the edge of Pando forest",
+      text: "The giant Old Oak Tree Ecna stands proud at the edge of Pando forest",
       image: "image1",
       options: [
         {
@@ -139,13 +139,13 @@ const Constants = {
         {
           id: 1,
           text: "Go with Trevor",
-          setState: {'trevor': 1},
+          setState: {'id': 'trevor', 'value': 1},
           nextText: 13,
         },
         {
           id: 2,
           text: "Go deeper",
-          setState: {'deeper': 1},
+          setState: {'id':'deeper', 'value': 1},
           nextText: 14,
         }
       ],
@@ -202,13 +202,13 @@ const Constants = {
         {
           id: 1,
           text: "pick up bone",
-          setState: {'bone': 1},
+          setState: {'value': 'bone', 'value': 1},
           nextText: 18,
         },
         {
           id: 2,
           text: "pick up carrot",
-          setState: {'carrot': 1},
+          setState: {'id': 'carrot', 'value': 1},
           nextText: 18,
         }
       ],
@@ -311,13 +311,13 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          requireState: {'trevor': 1},
+          requireState: {'id': 'trevor', 'value': 1},
           nextText: 27,
         },
         {
           id: 2,
           text: "Continue",
-          requireState: {'deeper': 1},
+          requireState: {'id': 'deeper', 'value': 1},
           nextText: 57,
         }
       ],
@@ -391,13 +391,13 @@ const Constants = {
         {
           id: 1,
           text: "Continue",
-          requireState: {'bone': 1},
+          requireState: {'id': 'bone', 'value': 1},
           nextText: 33,
         },
         {
           id: 2,
           text: "Continue",
-          requireState: {'carrot': 1},
+          requireState: {'id': 'carrot', 'value': 1},
           nextText: 42,
         }
       ],
@@ -569,6 +569,654 @@ const Constants = {
     {
       id: 48,
       text: "You tried your best, but unfortunately you couldn't save Trevor...maybe next time?",
+      options: [
+        {
+          id: 1,
+          text: "Restart game?",
+          nextText: -1,
+        },
+      ],
+    },
+    {
+      id: 49,
+      text: "You found a secret stash of 3 carrots",
+      image: "image6",
+      options: [
+        {
+          id: 1,
+          text: "Take them",
+          setState: {'id': 'carrot', 'value': 3},
+          nextText: 50,
+        },
+        {
+          id: 1,
+          text: "Leave them",
+          nextText: 50,
+        }
+      ],
+    },
+    {
+      id: 50,
+      text: "Looks like the one path leads back to the village and the other deeper down the underground network Trevor mentioned",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 51,
+        },
+      ],
+    },
+    {
+      id: 51,
+      text: "Which one should I choose?",
+      options: [
+        {
+          id: 1,
+          text: "Return home",
+          nextText: 47,
+        },
+        {
+          id: 1,
+          text: "Go deeper",
+          nextText: 47,
+        }
+      ],
+    },
+    {
+      id: 52,
+      text: "I found enough carrots for one day and it seems kind of dangerous down there.",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 53,
+        },
+      ],
+    },
+    {
+      id: 53,
+      text: "I probably should be heading back home, its getting dark..",
+      options: [
+        {
+          id: 1,
+          text: "End game",
+          nextText: 55,
+        },
+      ],
+    },
+    {
+      id: 54,
+      text: "I was waiting for this for so long, I feel ready to go deeper!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 56,
+        },
+      ],
+    },
+    {
+      id: 55,
+      text: "Eisenhopper safely returned to his village with 'Z' delicious carrots! Maybe next time he will find more...",
+      options: [
+        {
+          id: 1,
+          text: "Restart game?",
+          nextText: -1,
+        },
+      ],
+    },
+    {
+      id: 56,
+      text: "Mr. Sniffles: Hello there little rabbit! Are you sure you want to go deeper, meow?",
+      image: "image7",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 57,
+        },
+      ],
+    },
+    {
+      id: 57,
+      text: "Eisenhopper: Who goes there?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 58,
+        },
+      ],
+    },
+    {
+      id: 58,
+      text: "Mr. Sniffles: I see, it seems 'player' didn't warn you about the dangers?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 59,
+        },
+      ],
+    },
+    {
+      id: 59,
+      text: "Well, I my name is Mr. Sniffles and let's say I am the host of this place below the roots of Ecna...",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 60,
+        },
+      ],
+    },
+    {
+      id: 60,
+      text: "Eisenhopper: Wait what? Who is 'player'? You don't make any sense",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 61,
+        },
+      ],
+    },
+    {
+      id: 61,
+      text: "Mr. Sniffles: If answers is what you seek, my mice will help you...",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 62,
+        },
+      ],
+    },
+    {
+      id: 62,
+      text: "You find a piece of cheese and one purple carrot",
+      image: "image8a",
+      options: [
+        {
+          id: 1,
+          text: "Pick up cheese",
+          setState: {'id': 'cheese', 'value': 1},
+          nextText: 63,
+        },
+        {
+          id: 2,
+          text: "Pick up purple carrot",
+          setState: {'id': 'purple carrot', 'value': 1},
+          nextText: 63,
+        },
+      ],
+    },
+    {
+      id: 63,
+      text: "Truffles: Where is it! Where is it! I smell it since all morning, I'm sure it is here, squeak!",
+      image: "image8b",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 64,
+        },
+      ],
+    },
+    {
+      id: 64,
+      text: "Aaa! A rabbit! ",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 65,
+        },
+      ],
+    },
+    {
+      id: 65,
+      text: "Eisenhopper: Hello, I am Eisenhopper..",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 66,
+        },
+      ],
+    },
+    {
+      id: 66,
+      text: "Truffles: Truffles!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 67,
+        },
+      ],
+    },
+    {
+      id: 67,
+      text: "Eisenhopper: Where?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 68,
+        },
+      ],
+    },
+    {
+      id: 68,
+      text: "Truffles: No, Truffles is my name!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 69,
+        },
+      ],
+    },
+    {
+      id: 69,
+      text: "Eisenhopper: Nice to meet you Truffles!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 70,
+        },
+      ],
+    },
+    {
+      id: 70,
+      text: "Truffles: Did you find the piece of cheese I dreamt about all morning?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          requireState: {'id': 'cheese', 'value': 1},
+          nextText: 71,
+        },
+        {
+          id: 1,
+          text: "Continue",
+          requireState: {'id': 'purple carrot', 'value': 1},
+          nextText: 72,
+        }
+      ],
+    },
+    {
+      id: 71,
+      text: "Eisenhopper: Yes, I have it in my pocket",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 73,
+        },
+      ],
+    },
+    {
+      id: 72,
+      text: "Eisenhopper: No, but I found a pruprle carrot, never seen one before",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 76,
+        },
+      ],
+    },
+    {
+      id: 73,
+      text: "Truffles: Great! Can I have it please, squeak?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 74,
+        },
+      ],
+    },
+    {
+      id: 74,
+      text: "Eisenhopper: I need your help too, Mr. Sniffles told me you will help me get answers",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 75,
+        },
+      ],
+    },
+    {
+      id: 75,
+      text: "Truffles: Oh..I see...well lets trade then",
+      options: [
+        {
+          id: 1,
+          text: "Trade the cheese for 6 carrots",
+          setState: {'id': 'carrot', 'value': 6},
+          nextText: 76,
+        },
+        {
+          id: 2,
+          text: "Trade the cheese for 1 purple carrot",
+          setState: {'id': 'purple carrot', 'value': 1},
+          nextText: 76,
+        }
+      ],
+    },
+    {
+      id: 76,
+      text: "Eisenhopper: What is this?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 77,
+        },
+      ],
+    },
+    {
+      id: 77,
+      text: "Truffles: Eat it and you will find your answers",
+      options: [
+        {
+          id: 1,
+          text: "Eat it",
+          nextText: 85,
+        },
+        {
+          id: 2,
+          text: "Don't eat it",
+          nextText: 78,
+        }
+      ],
+    },
+    {
+      id: 78,
+      text: "Truffles: She found us! Oh no!",
+      image: "image8c",
+      options: [
+        {
+          id: 1,
+          text: "Run for your life and leave Truffles behind",
+          nextText: 79,
+        },
+        {
+          id: 2,
+          text: "Take out the sharp bone and fight!",
+          requireState: {'id': 'bone', 'value': 1},
+          nextText: 81,
+        }
+      ],
+    },
+    {
+      id: 79,
+      text: "Eisenhopper safely returned to his village with 'Z' delicious carrots! Maybe next time he will find more...",
+      options: [
+        {
+          id: 1,
+          text: "Restart game?",
+          nextText: -1,
+        },
+      ],
+    },
+    {
+      id: 80,
+      text: "Eisenhopper safely returned to his village with 1 purple carrot, but he never find out... Maybe Next time...",
+      options: [
+        {
+          id: 1,
+          text: "Restart game?",
+          nextText: -1,
+        },
+      ],
+    },
+    {
+      id: 81,
+      text: "Eisenhopper: Leave us alone!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 82,
+        },
+      ],
+    },
+    {
+      id: 82,
+      text: "Fox: Fine, but there is nothing for you down here...except for bitter truth..shi shi shi!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 83,
+        },
+      ],
+    },
+    {
+      id: 83,
+      text: "The fox leaves, and the mouse is nowhere to be found ",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 84,
+        },
+      ],
+    },
+    {
+      id: 84,
+      text: "Eisenhopper: I am really hungry",
+      options: [
+        {
+          id: 1,
+          text: "Eat purple carrot",
+          nextText: 85,
+        },
+      ],
+    },
+    {
+      id: 85,
+      text: "Eisenhopper: Woah! What are those colors!",
+      image: "image9",
+      options: [
+        {
+          id: 1,
+          text: "Hello Eisenhopper",
+          nextText: 77,
+        },
+        {
+          id: 2,
+          text: "Say nothing",
+          nextText: 77,
+        }
+      ],
+    },
+    {
+      id: 86,
+      text: "Eisenhopper got a glimpse of the truth...and it was beautiful...",
+      options: [
+        {
+          id: 1,
+          text: "Restart game?",
+          nextText: -1,
+        },
+      ],
+    },
+    {
+      id: 87,
+      text: "Eisenhopper: Who is this? Mr. Sniffles?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 88,
+        },
+      ],
+    },
+    {
+      id: 88,
+      text: "Player: No, I am 'Player'",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 89,
+        },
+      ],
+    },
+    {
+      id: 89,
+      text: "Eisenhopper: Where are you? I can't see you",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 90,
+        },
+      ],
+    },
+    {
+      id: 90,
+      text: "Player: That's because, I am not in your world",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 91,
+        },
+      ],
+    },
+    {
+      id: 91,
+      text: "What do you mean? Where are you?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 92,
+        },
+      ],
+    },
+    {
+      id: 92,
+      text: "The truth is that I am from a world where a group of people like me created your world",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 93,
+        },
+      ],
+    },
+    {
+      id: 93,
+      text: "Woah! So you are gods!",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 94,
+        },
+      ],
+    },
+    {
+      id: 94,
+      text: "Well, not exactly...",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 95,
+        },
+      ],
+    },
+    {
+      id: 95,
+      text: "But you should know a lot about my world then?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 96,
+        },
+      ],
+    },
+    {
+      id: 96,
+      text: "For us, your world exists for a brief amount of time and revolves around the day your are now experiencing...",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 97,
+        },
+      ],
+    },
+    {
+      id: 97,
+      text: "Your first day of exploring the borrows below Ecna, at the edge of Pando Forest",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 98,
+        },
+      ],
+    },
+    {
+      id: 98,
+      text: "End when does this day end?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 99,
+        },
+      ],
+    },
+    {
+      id: 99,
+      text: "Soon...I suppose...",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 100,
+        },
+      ],
+    },
+    {
+      id: 100,
+      text: "This means that I will disappear?",
+      options: [
+        {
+          id: 1,
+          text: "Continue",
+          nextText: 101,
+        },
+      ],
+    },
+    {
+      id: 101,
+      text: "Yes...but I will always remember you...",
+      options: [
+        {
+          id: 1,
+          text: "End game",
+          nextText: 102,
+        },
+      ],
+    },
+    {
+      id: 102,
+      text: "Eisenhopper learned the truth and became a memory",
       options: [
         {
           id: 1,
