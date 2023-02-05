@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/ggj-adventure/static/js/main.76e1babd.js",
+    "main.js": "/ggj-adventure/static/js/main.3f16df1d.js",
     "static/media/image5.jpg": "/ggj-adventure/static/media/image5.053d9c1a3c13b894238f.jpg",
     "static/media/image6.jpg": "/ggj-adventure/static/media/image6.7a0e945333577f7cfbfd.jpg",
     "static/media/image1.jpg": "/ggj-adventure/static/media/image1.55562ffb174acc24640e.jpg",
@@ -15,9 +15,9 @@
     "static/media/image3a.jpg": "/ggj-adventure/static/media/image3a.5493cb60cca7e8e76320.jpg",
     "static/media/image7.jpg": "/ggj-adventure/static/media/image7.5493cb60cca7e8e76320.jpg",
     "index.html": "/ggj-adventure/index.html",
-    "main.76e1babd.js.map": "/ggj-adventure/static/js/main.76e1babd.js.map"
+    "main.3f16df1d.js.map": "/ggj-adventure/static/js/main.3f16df1d.js.map"
   },
   "entrypoints": [
-    "static/js/main.76e1babd.js"
+    "static/js/main.3f16df1d.js"
   ]
 }
